@@ -1,0 +1,65 @@
+AWS Architecting
+
+[ ] What is your cloud architecture? Cloud or hybrid?
+
+ - Storage
+[ ] Are you implementing versioning for your most important files?
+
+[ ] Are you implementing MFA Delete for your most important files?
+
+[ ] Are your access control list routinely audited? Bucket policies set to least privilege?
+
+[ ] Are you implementing server-side encryption (SSE) for sensitive files?
+
+[ ] Are you implementing cross-region replication (CRR) for greater durability? 
+
+[ ] Are you implementing pricing studies to ensure youre storing in the right storage class? (Using Intelligent Tiering)
+
+
+ - Virtual Private Clouds (VPC)
+[ ] Are flow logs turned on so that you can audit activity?
+
+
+ - Network Access Control List (NACL)
+[ ] Are you routinely auditing your NACL ensuring that inbound and outbound rules are still required?
+
+[ ] Are you recognizing and blocking malicious IP addresses by adding them to the NACL restrict list?
+
+ - Security Groups
+[ ] Are you routinely auditing your Security Groups to ensure that instance firewalls are appropriate for their use?
+
+ - Identity Access Management (IAM)
+[ ] Are you routinely auditing your accounts, including their groups?
+
+[ ] Have you configured a strong password policy?
+
+[ ] Have you enabled MFA?
+
+[ ] Are you auditing your roles and policies to ensure they are inline with the work and least privilege?
+
+ - Cognito
+[ ] Do you have web apps?
+
+[ ] Are you using Cognito for authentication?
+
+ - Route53
+[ ] Are you using a routing policy to best address your customer base? 
+
+[ ] Do you have health checks implemented? Fail-over implemented?
+
+ - Web Servers
+[ ] Are your web servers spread accross multiple zones, multiple regions?
+
+[ ] Do you have a load balancer in use and directed to using Route53?
+
+[ ] Do you have the appropriate pricing model selected and in-use?
+
+[ ] Do you have snapshots of your production servers to ensure continuity?
+
+[ ] Are your web server EC2 instances set to auto-scale? Does your auto-scale policy meet your comfort level (i.e. set to scale up at 75% CPU usage)?
+
+ - Elastic Load Balancers (ELB)
+[ ] Which type of ELB is in use? 
+
+[ ] Do you have appropriate route rules in use? 
+
