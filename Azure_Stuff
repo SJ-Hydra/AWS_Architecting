@@ -1,0 +1,35 @@
+- Enumerate known accounts using the Azure login portal (User Enum)
+
+- Phishing Known User
+	- Phish known user using Azure Login Portal Clone (Evilginx2 (github))
+
+- Password Spray OWA (Mail) Accounts using the old ports, MSOLSpray.ps1 (github) 
+
+- Attempt to steal creds from compromised box
+	- Passwords in shares
+	- Passwords in memory (mimikatz)
+	- Kerberoast Passwords (extracts service account credential hashes from Active Directory for offline cracking)
+	- ASREPRoast (looks for users without Kerberos pre-authentication required attribute (DONT_REQ_PREAUTH))
+	- Passwords in GPP
+	- Stealing cookies stored from active sessions
+	- Keylogger
+
+- With a "guest" account, enumerate Azure AD using Powershell
+	-Get-AzContext
+	-Get-AADIntAzureTenants
+	-Perform other enumeration efforts.
+
+- As an insider, enumerate
+	-Use ROADrecon (github)
+	-Use PowerZure (github)
+
+- Enumerate Groups, Attempt to Join Privileged Groups
+	-If a group is dynamic, then users can be added based on rules. Attempt to exploit the rules.
+
+- Look at virtual machine, abuse 'rights'
+	- "Run command" (Azure VM option) to add users to the box. 
+		-net user name password /add
+		-net localgroup administrators name /add
+	- If you gain access to a box with rights, you can add a user to the "owners" within the subscriptions.
+
+- Establish persistence using account creation in AAD, local creds on a box, or identity federation.
